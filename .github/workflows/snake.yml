@@ -1,32 +1,26 @@
 name: Generate Snake
 
 on:
-  schedule: # Schedule it to run at specific intervals
-    - cron: "0 0 * * *" # Runs at every day at midnight
-  workflow_dispatch: # Allow manual trigger
+  schedule:
+    - cron: "0 1 * * *"
+  workflow_dispatch:
 
 jobs:
-  build:
+  generate:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout the repository
-        uses: actions/checkout@v4 # Node.js 20 güncellemesi
+        uses: actions/checkout@v2
 
-      - name: Generate Snake
-        id: generate_snake
-        run: |
-          docker run \
-            -e GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
-            -e GITHUB_USER_NAME=eneseldes \
-            -e GIF_OUT_PATH=dist/github-contribution-grid-snake.gif \
-            -e SVG_OUT_PATH=dist/github-contribution-grid-snake.svg \
-            platane/snk:2.0.0
-          echo "GIF_OUT_PATH=dist/github-contribution-grid-snake.gif" >> $GITHUB_ENV
-          echo "SVG_OUT_PATH=dist/github-contribution-grid-snake.svg" >> $GITHUB_ENV
-
-      - name: Upload snake
-        uses: actions/upload-artifact@v4 # Node.js 20 güncellemesi
+      - name: Generate snake
+        uses: Platane/snk@v2
         with:
-          name: snake
-          path: dist
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          output: dist/snake.svg
+
+      - name: Upload to GitHub
+        uses: actions/upload-artifact@v2
+        with:
+          name: snake.svg
+          path: dist/snake.svg
