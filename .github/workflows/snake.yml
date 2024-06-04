@@ -14,11 +14,16 @@ jobs:
         uses: actions/checkout@v4 # Node.js 20 güncellemesi
 
       - name: Generate Snake
-        uses: Platane/snk@master
-        with:
-          github_user_name: eneseldes
-          gif_out_path: dist/github-contribution-grid-snake.gif
-          svg_out_path: dist/github-contribution-grid-snake.svg
+        id: generate_snake
+        run: |
+          docker run \
+            -e GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
+            -e GITHUB_USER_NAME=eneseldes \
+            -e GIF_OUT_PATH=dist/github-contribution-grid-snake.gif \
+            -e SVG_OUT_PATH=dist/github-contribution-grid-snake.svg \
+            platane/snk:2.0.0
+          echo "GIF_OUT_PATH=dist/github-contribution-grid-snake.gif" >> $GITHUB_ENV
+          echo "SVG_OUT_PATH=dist/github-contribution-grid-snake.svg" >> $GITHUB_ENV
 
       - name: Upload snake
         uses: actions/upload-artifact@v4 # Node.js 20 güncellemesi
