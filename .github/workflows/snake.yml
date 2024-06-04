@@ -1,9 +1,9 @@
 name: Generate Snake
 
 on:
-  schedule: 
-    - cron: "0 0 * * *" 
-  workflow_dispatch:
+  schedule: # Schedule it to run at specific intervals
+    - cron: "0 0 * * *" # Runs at every day at midnight
+  workflow_dispatch: # Allow manual trigger
 
 jobs:
   build:
@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout the repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4 # Node.js 20 güncellemesi
 
       - name: Generate Snake
         uses: Platane/snk@master
@@ -21,7 +21,7 @@ jobs:
           svg_out_path: dist/github-contribution-grid-snake.svg
 
       - name: Upload snake
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4 # Node.js 20 güncellemesi
         with:
           name: snake
           path: dist
