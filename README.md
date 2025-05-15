@@ -27,4 +27,4 @@
   <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=eneseldes&" alt="eneseldes" /></p>
 </div>
 
-![snake gif](https://github.com/eneseldes/eneseldes/blob/output/github-snake-dark.svg)
+![snake gif](https://github.com/eneseldes/eneseldes/blob/output/github-snake.svg)
