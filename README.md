@@ -3,7 +3,7 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:6D28D9,100:06B6D4&height=240&section=header&text=ENES%20ELDEŞ&fontSize=45&fontColor=ffffff&animation=fadeIn&fontAlignY=28&desc=Fullstack%20Developer%20%7C%20Computer%20Engineering%20Student&descAlignY=48"/>
 
 <p align="center">  
-  <img src="https://img.shields.io/badge/AYBÜ_BİLTEK-Gridea_Team_Lead-6D28D9?style=flat-square&logo=github&logoColor=white" />  
+  <img src="https://img.shields.io/badge/Gridea-Team_Lead-6D28D9?style=flat-square&logo=github&logoColor=white" />  
   <img src="https://img.shields.io/badge/Focus-Fullstack_Development-06B6D4?style=flat-square&logo=postgresql&logoColor=white" />  
   <img src="https://img.shields.io/badge/DevOps-Docker_&_Linux-2496ED?style=flat-square&logo=docker&logoColor=white" />  
   <img src="https://img.shields.io/badge/Research-Green_Software-22C55E?style=flat-square&logo=anaconda&logoColor=white" />  
